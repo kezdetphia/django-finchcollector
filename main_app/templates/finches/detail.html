@@ -6,9 +6,13 @@
   <div class="card">
     <div class="card-content">
       <!-- <span class="card-title">{{ finch.name }}</span> -->
-      <p>Colour: {{ finch.color }}</p>
+      <p>Colour: {{ finch.color | linebreaks }}</p>
       <p>Description: {{ finch.description }}</p>
       <p>Created at: {{ finch.created_at}}</p>
+    </div>
+    <div class="card-action">
+      <a href="{% url 'finches_update' finch.id %}">Edit</a>
+      <a href="{% url 'finches_delete' finch.id %}">Delete</a>
     </div>
    </div> 
 
